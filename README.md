@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 # decathlon
 
-Decathlon score calculator. Reads athletes performance from a CSV file and writes them to an XML file sorted by total score.
+Decathlon score calculator. Reads athletes performance results from a CSV file and writes them to an XML file sorted by total score.
 
 Usage:
 
