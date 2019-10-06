@@ -1,9 +1,9 @@
 package io.github.raipc.decathlon.output;
 
-import java.io.Writer;
-
 import io.github.raipc.decathlon.schema.DecathlonRanking;
 
+import java.io.Writer;
+
 public interface DecathlonRankingSerializer {
-	void serialize(DecathlonRanking ranking, Writer writer);
+    void serialize(DecathlonRanking ranking, Writer writer);
 }

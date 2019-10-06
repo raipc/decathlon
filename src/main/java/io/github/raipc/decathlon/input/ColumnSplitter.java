@@ -1,5 +1,5 @@
 package io.github.raipc.decathlon.input;
 
 public interface ColumnSplitter {
-	String[] split(String row);
+    String[] split(String row);
 }

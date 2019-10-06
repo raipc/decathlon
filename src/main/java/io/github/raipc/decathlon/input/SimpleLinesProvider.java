@@ -9,11 +9,11 @@ import java.util.stream.Stream;
  * i.e. all LF characters are considered row separators
  */
 public class SimpleLinesProvider implements LinesProvider {
-	@Override
-	public Stream<String> readLines(Reader reader) {
-		final BufferedReader bufferedReader = reader instanceof BufferedReader ?
-			(BufferedReader) reader :
-			new BufferedReader(reader);
-		return bufferedReader.lines();
-	}
+    @Override
+    public Stream<String> readLines(Reader reader) {
+        final BufferedReader bufferedReader = reader instanceof BufferedReader ?
+                (BufferedReader) reader :
+                new BufferedReader(reader);
+        return bufferedReader.lines();
+    }
 }
