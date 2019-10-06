@@ -16,6 +16,7 @@ public class CsvSource {
 
     public Stream<String[]> readLines(Reader reader) {
         return linesProvider.readLines(reader)
+                .skip(csvConfig.skipNRows + (csvConfig.firstRowIsHeader ? 1 : 0))
                 .filter(CsvSource::isNotBlank)
                 .map(columnSplitter::split);
     }
