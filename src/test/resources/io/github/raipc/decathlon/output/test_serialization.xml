@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ranking>
+    <entries>
+        <rank>1</rank>
+        <athlete>John Dow</athlete>
+        <score>500</score>
+        <performanceRecords>
+            <performanceRecord>
+                <competition>RUNNING_100M</competition>
+                <performance>10.0</performance>
+            </performanceRecord>
+        </performanceRecords>
+    </entries>
+    <entries>
+        <rank>2</rank>
+        <athlete>John Dow Jr</athlete>
+        <score>490</score>
+        <performanceRecords>
+            <performanceRecord>
+                <competition>RUNNING_100M</competition>
+                <performance>10.1</performance>
+            </performanceRecord>
+        </performanceRecords>
+    </entries>
+</ranking>
