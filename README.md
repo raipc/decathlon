@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/raipc/decathlon.svg?branch=master)](https://travis-ci.org/raipc/decathlon)
+[![License](https://img.shields.io/badge/License-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 # decathlon
 
 Decathlon score calculator. Reads athletes performance from a CSV file and writes them to an XML file sorted by total score.
