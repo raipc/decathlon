@@ -3,6 +3,7 @@ package io.github.raipc.decathlon;
 import io.github.raipc.decathlon.calculation.ConstantCoefficientsProvider;
 import io.github.raipc.decathlon.calculation.DecathlonAthletesRanksCalculator;
 import io.github.raipc.decathlon.calculation.ScoreCalculator;
+import io.github.raipc.decathlon.calculation.SummarizingScoreCalculator;
 import io.github.raipc.decathlon.input.CsvConfig;
 import io.github.raipc.decathlon.input.CsvSource;
 import io.github.raipc.decathlon.input.IndexBasedColumnMapper;
@@ -41,7 +42,7 @@ public class Application {
         final CsvConfig csvConfig = createDefaultConfig();
         final List<ColumnSchema<?>> schema = createDefaultSchema();
         final List<DecathlonResults> decathlonResults = readDecathlonResultsFromFile(file, csvConfig, schema);
-        final ScoreCalculator scoreCalculator = new ScoreCalculator(new ConstantCoefficientsProvider());
+        final ScoreCalculator scoreCalculator = new SummarizingScoreCalculator(new ConstantCoefficientsProvider());
 
         System.out.println("Ranking athletes by total score");
         final DecathlonRanking decathlonRanking = new DecathlonAthletesRanksCalculator(scoreCalculator)

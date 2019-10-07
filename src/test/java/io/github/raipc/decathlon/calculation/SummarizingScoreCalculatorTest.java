@@ -1,12 +1,12 @@
 package io.github.raipc.decathlon.calculation;
 
-import java.util.Arrays;
-import java.util.List;
-
 import io.github.raipc.decathlon.schema.DistanceUnit;
 import io.github.raipc.decathlon.schema.PerformanceRecord;
 import io.github.raipc.decathlon.schema.TrackTimeUnit;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static io.github.raipc.decathlon.schema.Competition.Field.*;
 import static io.github.raipc.decathlon.schema.Competition.Track.*;
@@ -16,7 +16,7 @@ import static org.hamcrest.core.Is.is;
 class ScoreCalculatorTest {
     @Test
     public void calculateKevinMeyerScore() {
-        final ScoreCalculator scoreCalculator = new ScoreCalculator(new ConstantCoefficientsProvider());
+        final ScoreCalculator scoreCalculator = new SummarizingScoreCalculator(new ConstantCoefficientsProvider());
         List<PerformanceRecord<?>> kevinMeyerPerformance = Arrays.asList(
                 new PerformanceRecord<>(RUNNING_100M, "10.55", 10.55, TrackTimeUnit.SECONDS),
                 new PerformanceRecord<>(LONG_JUMP, "7.80", 7.80, DistanceUnit.METERS),
