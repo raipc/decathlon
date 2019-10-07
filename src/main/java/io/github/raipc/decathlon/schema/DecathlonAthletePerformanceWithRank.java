@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 @XmlType(propOrder = {"rank", "athlete", "score", "performanceRecords"})
 public class DecathlonAthletePerformanceWithRank {
@@ -47,6 +48,22 @@ public class DecathlonAthletePerformanceWithRank {
     @XmlElement
     public int getScore() {
         return score;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DecathlonAthletePerformanceWithRank that = (DecathlonAthletePerformanceWithRank) o;
+        return score == that.score &&
+                rank.equals(that.rank) &&
+                athlete.equals(that.athlete) &&
+                performanceRecords.equals(that.performanceRecords);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rank, athlete, performanceRecords, score);
     }
 
     @Override
