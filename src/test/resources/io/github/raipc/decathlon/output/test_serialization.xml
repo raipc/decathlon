@@ -6,7 +6,7 @@
         <score>500</score>
         <performanceRecords>
             <performanceRecord>
-                <competition>RUNNING_100M</competition>
+                <competition>100 m</competition>
                 <performance>10.0</performance>
             </performanceRecord>
         </performanceRecords>
@@ -17,7 +17,7 @@
         <score>490</score>
         <performanceRecords>
             <performanceRecord>
-                <competition>RUNNING_100M</competition>
+                <competition>100 m</competition>
                 <performance>10.1</performance>
             </performanceRecord>
         </performanceRecords>
