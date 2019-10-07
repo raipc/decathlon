@@ -10,6 +10,6 @@ public class CompetitionXmlAdapter extends XmlAdapter<String, Competition<?>> {
     }
 
     public String marshal(Competition<?> competition) {
-        return competition == null ? null : competition.name();
+        return competition == null ? null : competition.getDisplayName();
     }
 }

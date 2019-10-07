@@ -16,15 +16,17 @@ import static io.github.raipc.decathlon.schema.Competition.Track.RUNNING_400M;
 
 public interface Competition<T extends Unit<T>> {
     enum Track implements Competition<TrackTimeUnit> {
-        RUNNING_100M(TrackTimeUnit.SECONDS),
-        RUNNING_400M(TrackTimeUnit.SECONDS),
-        HURDLES_110M(TrackTimeUnit.SECONDS),
-        RUNNING_1500M(TrackTimeUnit.SECONDS);
+        RUNNING_100M(TrackTimeUnit.SECONDS, "100 m"),
+        RUNNING_400M(TrackTimeUnit.SECONDS, "400 m"),
+        HURDLES_110M(TrackTimeUnit.SECONDS, "110 m hurdles"),
+        RUNNING_1500M(TrackTimeUnit.SECONDS, "1500 m");
 
         private final TrackTimeUnit trackTimeUnit;
+        private final String displayName;
 
-        Track(TrackTimeUnit trackTimeUnit) {
+        Track(TrackTimeUnit trackTimeUnit, String displayName) {
             this.trackTimeUnit = trackTimeUnit;
+            this.displayName = displayName;
         }
 
         @Override
@@ -36,20 +38,27 @@ public interface Competition<T extends Unit<T>> {
         public EventType getEventType() {
             return EventType.TRACK;
         }
+
+        @Override
+        public String getDisplayName() {
+            return displayName;
+        }
     }
 
 	enum Field implements Competition<DistanceUnit> {
-        LONG_JUMP(DistanceUnit.CENTIMETERS),
-        SHOT_PUT(DistanceUnit.METERS),
-        HIGH_JUMP(DistanceUnit.CENTIMETERS),
-        DISCUS_THROW(DistanceUnit.METERS),
-        POLE_VAULT(DistanceUnit.CENTIMETERS),
-        JAVELIN_THROW(DistanceUnit.METERS);
+        LONG_JUMP(DistanceUnit.CENTIMETERS, "Long jump"),
+        SHOT_PUT(DistanceUnit.METERS, "Shot put"),
+        HIGH_JUMP(DistanceUnit.CENTIMETERS, "High jump"),
+        DISCUS_THROW(DistanceUnit.METERS, "Discus throw"),
+        POLE_VAULT(DistanceUnit.CENTIMETERS, "Pole vault"),
+        JAVELIN_THROW(DistanceUnit.METERS, "Javelin throw");
 
         private final DistanceUnit distanceUnit;
+        private final String displayName;
 
-        Field(DistanceUnit distanceUnit) {
+        Field(DistanceUnit distanceUnit, String displayName) {
             this.distanceUnit = distanceUnit;
+            this.displayName = displayName;
         }
 
         @Override
@@ -61,6 +70,11 @@ public interface Competition<T extends Unit<T>> {
         public EventType getEventType() {
             return EventType.FIELD;
         }
+
+        @Override
+        public String getDisplayName() {
+            return displayName;
+        }
     }
 
     T getRequiredUnit();
@@ -68,6 +82,8 @@ public interface Competition<T extends Unit<T>> {
     EventType getEventType();
 
     String name();
+
+    String getDisplayName();
 
     static List<Competition<?>> values() {
         return Arrays.asList(
